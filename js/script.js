@@ -4,10 +4,16 @@
 
 //GLOBAL VARIABLES
 /* global $ */
-var input = $("#input").val();
-var randomNumber = math.floor((math.random() * 3) + 1)
-var random = randomNumber
+
+var randomNumber = 0
+var computerChoice = math.floor((math.random() * 3) + 1)
 var winner =
+
+$("#butt").click(function(){
+   var userChoice = $("#input").val();
+
+    $("#userChoice").text(userChoice);
+});
 
 if(random == 1){
     $("")
