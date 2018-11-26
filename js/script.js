@@ -5,25 +5,32 @@
 //GLOBAL VARIABLES
 /* global $ */
 
-var randomNumber = 0
-var computerChoice = math.floor((math.random() * 3) + 1)
-var winner =
 
-$("#butt").click(function(){
-   var userChoice = $("#input").val();
 
-    $("#userChoice").text(userChoice);
+$("#shoot").click(function(){
+    var randomNumber = Math.floor((Math.random() * 3));
+    var choices = ["rock","paper","scissors"];
+    var computerChoice= choices[randomNumber];
+    var userChoice = $("#input").val();
+    
+   $("#userChoice").text(userChoice);
+   $("#computerChoice").text(computerChoice)
+   
+  if((userChoice === "rock" && computerChoice === "rock") || (userChoice === "scissors" && computerChoice === "scissors") || (userChoice === "paper" && computerChoice === "paper")){
+     $("#user").text("Draw!")
+     $("#comp").text("Draw!")
+    }
+    else if ((userChoice === "rock" && computerChoice === "paper") || (userChoice === "scissors" && computerChoice === "rock") || (userChoice === "paper" && computerChoice === "scissors")){
+     $("#user").text("You Lost!")
+     $("#comp").text("Computer Wins!")
+    }
+    else if ((userChoice === "rock" && computerChoice === "scissors") || (userChoice === "scissors" && computerChoice === "paper") || (userChoice === "paper" && computerChoice === "rock")){
+     $("#user").text("You Win!")
+     $("#comp").text("Computer Loses!")
+    }
 });
 
-if(random == 1){
-    $("")
-}
-else if (random == 2){
-    
-}
-else if (random == 3){
-    
-}
+
 
 // DOCUMENT READY FUNCTION BELOW
 
